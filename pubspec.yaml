@@ -1,0 +1,48 @@
+name: pokedex
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.1 <3.0.0'
+
+dependencies:
+
+  # A predictable state management library that helps implement the BLoC (Business Logic Component) design pattern.
+  bloc: ^8.1.1
+
+  # Flutter plugin for discovering the state of the network (WiFi & mobile/cellular) connectivity on Android and iOS.
+  connectivity_plus: ^3.0.3
+
+  # Functional Programming in Dart. Purify your Dart code using efficient immutable data structures, monads, lenses and other FP tools.
+  dartz: ^0.10.1
+
+  # A powerful HTTP package for Dart/Flutter, which supports Global settings, Interceptors, FormData, Aborting and canceling a request, Files uploading and downloading, Requests timeout, Custom adapters, etc.
+  dio: ^5.0.1
+
+  # A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
+  equatable: ^2.0.5
+
+  # A clean and lightweight loading/toast widget for Flutter, Easy to use without context, Support iOS、Android and Web
+  flutter_easyloading: ^3.0.5
+
+  # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"
+  get_it: ^7.2.0
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.3.3
+
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  
+  # A mock framework inspired by Mockito with APIs for Fakes, Mocks, behavior verification, and stubbing.
+  mockito: ^5.3.2
+
+flutter:
+  uses-material-design: true
