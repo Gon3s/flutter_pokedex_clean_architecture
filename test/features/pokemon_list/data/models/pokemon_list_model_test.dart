@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pokedex/features/pokemon_list/data/models/pokemon_list_model.dart';
-import 'package:pokedex/features/pokemon_list/domain/entities/pokemon_entity.dart';
+import 'package:pokedex/src/features/pokemon_list/data/models/pokemon_list_model.dart';
+import 'package:pokedex/src/features/pokemon_list/domain/entities/pokemon_entity.dart';
 
 void main() {
   const tPokemonModel = PokemonModel(

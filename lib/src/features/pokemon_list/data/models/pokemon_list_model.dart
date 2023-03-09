@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:pokedex/core/data/api/request/serializable_protocol.dart';
-import 'package:pokedex/features/pokemon_list/domain/entities/pokemon_entity.dart';
+import 'package:pokedex/src/core/data/api/request/serializable_protocol.dart';
+import 'package:pokedex/src/features/pokemon_list/domain/entities/pokemon_entity.dart';
 
 class PokemonListModel extends Serializable {
   final List<PokemonModel>? pokemonList;

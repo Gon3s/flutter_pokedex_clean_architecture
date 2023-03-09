@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/features/pokemon_list/presentation/cubits/remote/remote_pokemon_cubit.dart';
+import 'package:pokedex/src/features/pokemon_list/presentation/cubits/remote/remote_pokemon_cubit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

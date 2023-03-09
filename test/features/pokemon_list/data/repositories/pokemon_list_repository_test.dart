@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:pokedex/features/pokemon_list/domain/entities/pokemon_entity.dart';
-import 'package:pokedex/features/pokemon_list/domain/repositories/pokemon_list_repository.dart';
+import 'package:pokedex/src/features/pokemon_list/domain/entities/pokemon_entity.dart';
+import 'package:pokedex/src/features/pokemon_list/domain/repositories/pokemon_list_repository.dart';
 
 import 'pokemon_list_repository_test.mocks.dart';
 

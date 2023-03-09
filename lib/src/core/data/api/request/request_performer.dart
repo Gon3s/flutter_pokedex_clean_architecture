@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:pokedex/core/constant.dart';
-import 'package:pokedex/core/data/api/endpoints.dart';
-import 'package:pokedex/core/data/api/request/index.dart';
-import 'package:pokedex/core/utilities/colored_debug_printer.dart';
+import 'package:pokedex/src/core/constant.dart';
+import 'package:pokedex/src/core/data/api/endpoints.dart';
+import 'package:pokedex/src/core/data/api/request/index.dart';
+import 'package:pokedex/src/core/utilities/colored_debug_printer.dart';
 
 part 'request_interceptor.dart';
 
@@ -21,7 +21,7 @@ class RequestPerformer extends _DioRequestInterceptor {
     final ProgressCallback? onReceiveProgress,
   }) {
     _RequestDebugger.debugginEnabled = true;
-    
+
     //* SERIALIZATION
     T? _decode(Response<dynamic> response, T? responseModel) {
       try {

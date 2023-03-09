@@ -32,6 +32,12 @@ dependencies:
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"
   get_it: ^7.2.0
 
+  # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
+  intl: ^0.17.0
+
+  flutter_localizations:
+    sdk: flutter
+
   flutter:
     sdk: flutter
 
@@ -43,9 +49,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  
+
   # A mock framework inspired by Mockito with APIs for Fakes, Mocks, behavior verification, and stubbing.
   mockito: ^5.3.2
 
 flutter:
   uses-material-design: true
+flutter_intl:
+  enabled: true

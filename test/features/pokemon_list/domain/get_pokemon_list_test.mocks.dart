@@ -6,9 +6,9 @@
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:pokedex/features/pokemon_list/domain/entities/pokemon_entity.dart'
+import 'package:pokedex/src/features/pokemon_list/domain/entities/pokemon_entity.dart'
     as _i5;
-import 'package:pokedex/features/pokemon_list/domain/repositories/pokemon_list_repository.dart'
+import 'package:pokedex/src/features/pokemon_list/domain/repositories/pokemon_list_repository.dart'
     as _i2;
 
 import 'get_pokemon_list_test.dart' as _i3;
