@@ -35,6 +35,9 @@ dependencies:
   # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
   intl: ^0.17.0
 
+  # Flutter package for generating palette colors from a source image.
+  palette_generator: ^0.3.3+2
+
   flutter_localizations:
     sdk: flutter
 
@@ -57,3 +60,4 @@ flutter:
   uses-material-design: true
 flutter_intl:
   enabled: true
+  main_locale: fr

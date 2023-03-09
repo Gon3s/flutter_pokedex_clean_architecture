@@ -49,6 +49,26 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Pokédex`
+  String get home_title {
+    return Intl.message(
+      'Pokédex',
+      name: 'home_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recherchez des Pokémon par nom ou numéro`
+  String get home_subtitle {
+    return Intl.message(
+      'Recherchez des Pokémon par nom ou numéro',
+      name: 'home_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -56,7 +76,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/src/features/pokemon_list/presentation/cubits/remote/remote_pokemon_cubit.dart';
+import 'package:pokedex/generated/l10n.dart';
+import 'package:pokedex/src/features/pokemon_list/presentation/pages/pokemon_list_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,37 +10,41 @@ class HomePage extends StatelessWidget {
     // final remotePokemonCubit = BlocProvider.of<RemotePokemonCubit>(context);
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Pokedex'),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(
+            16.0,
+            32.0,
+            16.0,
+            16.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                S.of(context).home_title,
+                style: const TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              Text(
+                S.of(context).home_subtitle,
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              const Expanded(child: PokemonListWidget()),
+            ],
+          ),
         ),
-        body: BlocBuilder<RemotePokemonCubit, RemotePokemonState>(
-          builder: (context, state) {
-            if (state is RemotePokemonLoading) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-
-            if (state is RemotePokemonLoaded) {
-              print(state.pokemons.length);
-              return ListView.builder(
-                itemCount: state.pokemons.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(state.pokemons[index].name),
-                  );
-                },
-              );
-            }
-
-            if (state is RemotePokemonError) {
-              return Center(
-                child: Text(state.error.toString()),
-              );
-            }
-
-            return const SizedBox();
-          },
-        ));
+      ),
+    );
   }
 }
