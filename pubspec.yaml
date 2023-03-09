@@ -23,6 +23,9 @@ dependencies:
   # A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
   equatable: ^2.0.5
 
+  # Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package.
+  flutter_bloc: ^8.1.2
+
   # A clean and lightweight loading/toast widget for Flutter, Easy to use without context, Support iOS、Android and Web
   flutter_easyloading: ^3.0.5
 

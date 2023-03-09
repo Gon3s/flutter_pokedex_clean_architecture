@@ -20,6 +20,8 @@ class RequestPerformer extends _DioRequestInterceptor {
     final ProgressCallback? onSendProgress,
     final ProgressCallback? onReceiveProgress,
   }) {
+    _RequestDebugger.debugginEnabled = true;
+    
     //* SERIALIZATION
     T? _decode(Response<dynamic> response, T? responseModel) {
       try {
