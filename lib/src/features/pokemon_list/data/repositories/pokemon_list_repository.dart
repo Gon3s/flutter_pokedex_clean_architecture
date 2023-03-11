@@ -9,8 +9,8 @@ class PokemonListRepositoryImpl implements PokemonListRepository {
   PokemonListRepositoryImpl(this.remoteApi);
 
   @override
-  Future<List<PokemonEntity>?> getPokemonList() async {
-    return remoteApi.getPokemonList().then(
+  Future<List<PokemonEntity>?> getPokemonList({required int page}) async {
+    return remoteApi.getPokemonList(page: page).then(
           (result) => result.fold(
             (_) => null,
             (PokemonListModel data) {

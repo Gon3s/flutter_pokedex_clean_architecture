@@ -19,18 +19,18 @@ void main() {
   group('getPokemonList', () {
     test('should return a list of PokemonEntity', () async {
       // arrange
-      when(mockGetPokemonListTest.execute()).thenAnswer((_) async => []);
+      when(mockGetPokemonListTest.execute(page: 1)).thenAnswer((_) async => []);
       // act
-      final result = await mockGetPokemonListTest.execute();
+      final result = await mockGetPokemonListTest.execute(page: 1);
       // assert
       expect(result, isA<List<PokemonEntity>>());
     });
 
     test('should return null if the call to the remote data source is unsuccessful', () async {
       // arrange
-      when(mockGetPokemonListTest.execute()).thenAnswer((_) async => null);
+      when(mockGetPokemonListTest.execute(page: 1)).thenAnswer((_) async => null);
       // act
-      final result = await mockGetPokemonListTest.execute();
+      final result = await mockGetPokemonListTest.execute(page: 1);
       // assert
       expect(result, null);
     });

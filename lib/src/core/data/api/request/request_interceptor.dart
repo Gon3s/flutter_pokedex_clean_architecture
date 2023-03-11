@@ -4,9 +4,9 @@ class _DioRequestInterceptor extends _RequestDebugger {
   final Dio baseDio = Dio(
     BaseOptions(
       baseUrl: Endpoints.baseUrl,
-      connectTimeout: const Duration(milliseconds: AppConstant.connectTimeout),
-      receiveTimeout: const Duration(milliseconds: AppConstant.receiveTimeout),
-      sendTimeout: const Duration(milliseconds: AppConstant.sendTimeout),
+      connectTimeout: const Duration(milliseconds: AppValues.connectTimeout),
+      receiveTimeout: const Duration(milliseconds: AppValues.receiveTimeout),
+      sendTimeout: const Duration(milliseconds: AppValues.sendTimeout),
     ),
   );
 

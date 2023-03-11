@@ -6,7 +6,7 @@ class GetPokemonList {
 
   GetPokemonList(this.repository);
 
-  Future<List<PokemonEntity>?> execute() async {
-    return await repository.getPokemonList();
+  Future<List<PokemonEntity>?> execute({required int page}) async {
+    return await repository.getPokemonList(page: page);
   }
 }

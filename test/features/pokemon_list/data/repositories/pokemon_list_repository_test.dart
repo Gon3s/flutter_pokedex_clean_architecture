@@ -19,18 +19,18 @@ Future<void> main() async {
   group('getPokemonList', () {
     test('should return a list of PokemonEntity', () async {
       // arrange
-      when(mockPokemonListRepositoryTest.getPokemonList()).thenAnswer((_) async => []);
+      when(mockPokemonListRepositoryTest.getPokemonList(page: 1)).thenAnswer((_) async => []);
       // act
-      final result = await mockPokemonListRepositoryTest.getPokemonList();
+      final result = await mockPokemonListRepositoryTest.getPokemonList(page: 1);
       // assert
       expect(result, isA<List<PokemonEntity>>());
     });
 
     test('should return null if the call to the remote data source is unsuccessful', () async {
       // arrange
-      when(mockPokemonListRepositoryTest.getPokemonList()).thenAnswer((_) async => null);
+      when(mockPokemonListRepositoryTest.getPokemonList(page: 1)).thenAnswer((_) async => null);
       // act
-      final result = await mockPokemonListRepositoryTest.getPokemonList();
+      final result = await mockPokemonListRepositoryTest.getPokemonList(page: 1);
       // assert
       expect(result, null);
     });

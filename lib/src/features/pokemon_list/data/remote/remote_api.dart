@@ -5,9 +5,10 @@ import 'package:pokedex/src/core/data/api/request/index.dart';
 import 'package:pokedex/src/features/pokemon_list/data/models/pokemon_list_model.dart';
 
 class RemoteApi extends RequestPerformer {
+
   Future<Either<DioError, PokemonListModel>> getPokemonList({
     int limit = 20,
-    int offset = 0,
+    int page = 0,
   }) async {
     try {
       return Right(
@@ -17,7 +18,7 @@ class RemoteApi extends RequestPerformer {
           path: Endpoints.pokemonListPath,
           queryParameters: {
             'limit': limit,
-            'offset': offset,
+            'offset': (page - 1) * limit,
           },
         )) as PokemonListModel,
       );

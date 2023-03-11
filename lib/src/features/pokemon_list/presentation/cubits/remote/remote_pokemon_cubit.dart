@@ -11,18 +11,29 @@ class RemotePokemonCubit extends BaseCubit<RemotePokemonState, List<PokemonEntit
 
   final GetPokemonList _getPokemonList;
 
+  int _page = 1;
+
   Future<void> getPokemons() async {
     if (isBusy) return;
 
     await run(() async {
-      _getPokemonList
-          .execute()
-          .then(
-            (value) => emit(
-              RemotePokemonLoaded(pokemons: value ?? []),
+      _getPokemonList.execute(page: _page).then(
+        (value) async {
+          final noMoreData = value == null || value.isEmpty;
+          if (value != null) {
+            data.addAll(value);
+          }
+
+          _page++;
+
+          emit(
+            RemotePokemonLoaded(
+              pokemons: data.clone(),
+              noMoreData: noMoreData,
             ),
-          )
-          .catchError((e) => emit(RemotePokemonError(error: e)));
+          );
+        },
+      );
     });
   }
 }

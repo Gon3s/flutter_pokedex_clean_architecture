@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:pokedex/src/core/constant.dart';
+import 'package:pokedex/src/core/constants/app_values.dart';
 import 'package:pokedex/src/core/data/api/endpoints.dart';
 import 'package:pokedex/src/core/data/api/request/index.dart';
 import 'package:pokedex/src/core/utilities/colored_debug_printer.dart';
@@ -23,7 +23,7 @@ class RequestPerformer extends _DioRequestInterceptor {
     _RequestDebugger.debugginEnabled = true;
 
     //* SERIALIZATION
-    T? _decode(Response<dynamic> response, T? responseModel) {
+    T? decode(Response<dynamic> response, T? responseModel) {
       try {
         if (response.data is List || response.data is StringKeyedMap) {
           return responseModel?.fromJson(response.data) as T?;
@@ -56,7 +56,7 @@ class RequestPerformer extends _DioRequestInterceptor {
               cancelToken: cancelToken,
               onReceiveProgress: onReceiveProgress,
             )
-            .then((result) => _decode(result, decodableModel));
+            .then((result) => decode(result, decodableModel));
 
       case RestfullMethods.post:
         return dio
@@ -69,7 +69,7 @@ class RequestPerformer extends _DioRequestInterceptor {
               onSendProgress: onSendProgress,
               onReceiveProgress: onReceiveProgress,
             )
-            .then((result) => _decode(result, decodableModel));
+            .then((result) => decode(result, decodableModel));
 
       case RestfullMethods.put:
         return dio
@@ -82,7 +82,7 @@ class RequestPerformer extends _DioRequestInterceptor {
               onSendProgress: onSendProgress,
               onReceiveProgress: onReceiveProgress,
             )
-            .then((result) => _decode(result, decodableModel));
+            .then((result) => decode(result, decodableModel));
 
       case RestfullMethods.patch:
         return dio
@@ -95,7 +95,7 @@ class RequestPerformer extends _DioRequestInterceptor {
               onSendProgress: onSendProgress,
               onReceiveProgress: onReceiveProgress,
             )
-            .then((result) => _decode(result, decodableModel));
+            .then((result) => decode(result, decodableModel));
 
       case RestfullMethods.delete:
         return dio
@@ -106,7 +106,7 @@ class RequestPerformer extends _DioRequestInterceptor {
               options: options,
               cancelToken: cancelToken,
             )
-            .then((result) => _decode(result, decodableModel));
+            .then((result) => decode(result, decodableModel));
     }
   }
 }

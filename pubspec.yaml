@@ -10,6 +10,9 @@ dependencies:
 
   # A predictable state management library that helps implement the BLoC (Business Logic Component) design pattern.
   bloc: ^8.1.1
+  
+  # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
+  cached_network_image: ^3.2.3
 
   # Flutter plugin for discovering the state of the network (WiFi & mobile/cellular) connectivity on Android and iOS.
   connectivity_plus: ^3.0.3
@@ -29,8 +32,14 @@ dependencies:
   # A clean and lightweight loading/toast widget for Flutter, Easy to use without context, Support iOS、Android and Web
   flutter_easyloading: ^3.0.5
 
+  # A flutter implementation of React hooks. It adds a new kind of widget with enhanced code reuse.
+  flutter_hooks: ^0.18.6
+
   # Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"
   get_it: ^7.2.0
+
+  # A Flutter package to use fonts from fonts.google.com. Supports HTTP fetching, caching, and asset bundling.
+  google_fonts: ^4.0.3
 
   # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
   intl: ^0.17.0

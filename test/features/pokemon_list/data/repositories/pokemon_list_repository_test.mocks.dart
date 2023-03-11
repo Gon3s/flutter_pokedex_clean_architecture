@@ -32,10 +32,12 @@ class MockPokemonListRepositoryTest extends _i1.Mock
   }
 
   @override
-  _i3.Future<List<_i4.PokemonEntity>?> getPokemonList() => (super.noSuchMethod(
+  _i3.Future<List<_i4.PokemonEntity>?> getPokemonList({required int? page}) =>
+      (super.noSuchMethod(
         Invocation.method(
           #getPokemonList,
           [],
+          {#page: page},
         ),
         returnValue: _i3.Future<List<_i4.PokemonEntity>?>.value(),
       ) as _i3.Future<List<_i4.PokemonEntity>?>);
