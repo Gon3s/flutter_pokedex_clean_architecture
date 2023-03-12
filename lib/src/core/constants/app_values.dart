@@ -6,7 +6,7 @@ class AppValues {
   static const double defaultPadding = 8.0;
 
   //$ Default Border Radius
-  static const double defaultBorderRadius = 16.0;
+  static const double defaultBorderRadius = 8.0;
 
   //? Dio Timeouts
   static const int connectTimeout = 20000;

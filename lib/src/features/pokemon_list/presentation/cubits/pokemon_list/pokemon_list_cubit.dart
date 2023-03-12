@@ -4,10 +4,10 @@ import 'package:pokedex/src/features/pokemon_list/domain/entities/pokemon_entity
 import 'package:pokedex/src/features/pokemon_list/domain/usecases/get_pokemon_list.dart';
 import 'package:pokedex/src/features/pokemon_list/presentation/cubits/base/base_cubit.dart';
 
-part 'remote_pokemon_state.dart';
+part 'pokemon_list_state.dart';
 
-class RemotePokemonCubit extends BaseCubit<RemotePokemonState, List<PokemonEntity>> {
-  RemotePokemonCubit(this._getPokemonList) : super(const RemotePokemonLoading(), []);
+class PokemonListCubit extends BaseCubit<PokemonListState, List<PokemonEntity>> {
+  PokemonListCubit(this._getPokemonList) : super(const PokemonListLoading(), []);
 
   final GetPokemonList _getPokemonList;
 
@@ -27,7 +27,7 @@ class RemotePokemonCubit extends BaseCubit<RemotePokemonState, List<PokemonEntit
           _page++;
 
           emit(
-            RemotePokemonLoaded(
+            PokemonListLoaded(
               pokemons: data.clone(),
               noMoreData: noMoreData,
             ),

@@ -4,8 +4,9 @@ import 'package:pokedex/src/core/data/api/endpoints.dart';
 import 'package:pokedex/src/core/data/api/request/index.dart';
 import 'package:pokedex/src/features/pokemon_list/data/models/pokemon_list_model.dart';
 
-class RemoteApi extends RequestPerformer {
+import '../models/pokemon_details_model.dart';
 
+class RemoteApi extends RequestPerformer {
   Future<Either<DioError, PokemonListModel>> getPokemonList({
     int limit = 20,
     int page = 0,
@@ -21,6 +22,20 @@ class RemoteApi extends RequestPerformer {
             'offset': (page - 1) * limit,
           },
         )) as PokemonListModel,
+      );
+    } on DioError catch (e) {
+      return Left(e);
+    }
+  }
+
+  Future<Either<DioError, PokemonDetailsModel>> getPokemonDetails({required int id}) async {
+    try {
+      return Right(
+        (await performSerializableRequest(
+          decodableModel: PokemonDetailsModel(),
+          method: RestfullMethods.get,
+          path: Endpoints.pokemonDetailsPath.replaceAll('{id}', '$id'),
+        )) as PokemonDetailsModel,
       );
     } on DioError catch (e) {
       return Left(e);

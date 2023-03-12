@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pokedex/src/core/extensions/strings_extensions.dart';
 
 import '../../../../../core/constants/app_styles.dart';
@@ -36,31 +37,37 @@ class _PokemonTileState extends State<PokemonTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: _dominantColor ?? Colors.white,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(AppValues.defaultBorderRadius),
-        ),
+    return InkWell(
+      onTap: () => context.pushNamed(
+        'pokemonDetails',
+        extra: widget.pokemon,
       ),
-      padding: const EdgeInsets.all(AppValues.defaultPadding),
-      child: Column(
-        children: [
-          PokemonImage(image: widget.pokemon.image),
-          const VerticalSpacing(),
-          Text(
-            widget.pokemon.name.ucfirst(),
-            style: AppStyles.headline3.copyWith(
-              color: Colors.white,
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: _dominantColor ?? Colors.white,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(AppValues.defaultBorderRadius),
           ),
-          Text(
-            widget.pokemon.number.format(),
-            style: AppStyles.title.copyWith(
-              color: Colors.white,
+        ),
+        padding: const EdgeInsets.all(AppValues.defaultPadding),
+        child: Column(
+          children: [
+            PokemonImage(image: widget.pokemon.image),
+            const VerticalSpacing(),
+            Text(
+              widget.pokemon.name.ucfirst(),
+              style: AppStyles.headline3.copyWith(
+                color: Colors.white,
+              ),
             ),
-          ),
-        ],
+            Text(
+              widget.pokemon.number.format(),
+              style: AppStyles.title.copyWith(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

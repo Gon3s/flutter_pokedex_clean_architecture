@@ -41,6 +41,9 @@ dependencies:
   # A Flutter package to use fonts from fonts.google.com. Supports HTTP fetching, caching, and asset bundling.
   google_fonts: ^4.0.3
 
+  # A declarative router for Flutter based on Navigation 2 supporting deep linking, data-driven routes and more
+  go_router: ^6.2.0
+
   # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
   intl: ^0.17.0
 

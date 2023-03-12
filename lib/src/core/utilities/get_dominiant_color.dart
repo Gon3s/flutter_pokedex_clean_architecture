@@ -10,6 +10,7 @@ Future<Color> getDominantColorFromImageUrl(String imageUrl) {
       (ImageInfo info, _) {
         PaletteGenerator.fromImageProvider(
           image,
+          maximumColorCount: 10,
         ).then(
           (value) => completer.complete(value.dominantColor?.color),
         );
