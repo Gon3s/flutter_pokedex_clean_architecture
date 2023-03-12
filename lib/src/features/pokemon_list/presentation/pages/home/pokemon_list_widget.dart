@@ -22,7 +22,8 @@ class PokemonListWidget extends HookWidget {
       });
 
       return scrollController.dispose;
-    }, const []);
+      },
+    );
 
     return BlocBuilder<RemotePokemonCubit, RemotePokemonState>(
       builder: (_, state) {

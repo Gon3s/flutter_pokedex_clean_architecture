@@ -16,9 +16,9 @@ class RemotePokemonCubit extends BaseCubit<RemotePokemonState, List<PokemonEntit
   Future<void> getPokemons() async {
     if (isBusy) return;
 
-    await run(() async {
-      _getPokemonList.execute(page: _page).then(
-        (value) async {
+    run(() {
+      return _getPokemonList.execute(page: _page).then(
+        (value) {
           final noMoreData = value == null || value.isEmpty;
           if (value != null) {
             data.addAll(value);

@@ -9,7 +9,7 @@ environment:
 dependencies:
 
   # A predictable state management library that helps implement the BLoC (Business Logic Component) design pattern.
-  bloc: ^8.1.1
+  # bloc: ^8.1.1
   
   # Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
   cached_network_image: ^3.2.3
@@ -54,6 +54,8 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  # Software analytics tool that helps developers analyse and improve software quality.
+  dart_code_metrics: ^5.6.0
 
   # A build system for Dart code generation and modular compilation.
   build_runner: ^2.3.3

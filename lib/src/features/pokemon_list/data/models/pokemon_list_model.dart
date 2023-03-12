@@ -44,8 +44,8 @@ class PokemonListModel extends Serializable {
           {"name": "pidgeotto", "url": "https://pokeapi.co/api/v2/pokemon/17/"},
           {"name": "pidgeot", "url": "https://pokeapi.co/api/v2/pokemon/18/"},
           {"name": "rattata", "url": "https://pokeapi.co/api/v2/pokemon/19/"},
-          {"name": "raticate", "url": "https://pokeapi.co/api/v2/pokemon/20/"}
-        ]
+          {"name": "raticate", "url": "https://pokeapi.co/api/v2/pokemon/20/"},
+        ],
       };
 
   @override
@@ -65,6 +65,7 @@ class PokemonModel extends Equatable {
 
   PokemonEntity toEntity() {
     var number = url.split('/').lastWhere((element) => element.isNotEmpty);
+
     return PokemonEntity(
       number: int.parse(number),
       name: name,

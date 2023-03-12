@@ -12,8 +12,6 @@ class RequestPerformer extends _DioRequestInterceptor {
     required RestfullMethods method,
     required String path,
     final dynamic data,
-    final String? contentType,
-    final StringKeyedMap? extraHeaders,
     final StringKeyedMap? queryParameters,
     final Options? options,
     final CancelToken? cancelToken,
@@ -34,6 +32,7 @@ class RequestPerformer extends _DioRequestInterceptor {
             'Exception',
             '\n[RequestPerformer] Excpetion => `response.data` is neither a List nor a Map',
           );
+
           return null;
         }
       } catch (error, stackTrace) {

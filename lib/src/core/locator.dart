@@ -6,7 +6,7 @@ import 'package:pokedex/src/features/pokemon_list/domain/usecases/get_pokemon_li
 
 final locator = GetIt.instance;
 
-Future<void> initializeDependencies() async {
+void initializeDependencies() {
   locator.registerSingleton<RemoteApi>(
     RemoteApi(),
   );

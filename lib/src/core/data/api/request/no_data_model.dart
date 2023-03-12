@@ -6,7 +6,7 @@ class NoDataModel extends Serializable {
   NoDataModel({this.success});
 
   @override
-  NoDataModel fromJson(dynamic json) => NoDataModel(success: json['success'] as bool);
+  NoDataModel fromJson(json) => NoDataModel(success: json['success'] as bool);
 
   @override
   List<Object?> get props => [success];

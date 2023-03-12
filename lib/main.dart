@@ -7,10 +7,10 @@ import 'package:pokedex/src/features/pokemon_list/presentation/cubits/remote/rem
 import 'package:pokedex/src/features/pokemon_list/presentation/pages/home/home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await initializeDependencies();
+  initializeDependencies();
 
   runApp(const MainApp());
 }
@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => RemotePokemonCubit(locator<GetPokemonList>())..getPokemons(),
-        )
+        ),
       ],
       child: MaterialApp(
         localizationsDelegates: const [

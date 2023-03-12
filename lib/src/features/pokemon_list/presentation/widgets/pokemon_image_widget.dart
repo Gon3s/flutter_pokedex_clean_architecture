@@ -14,10 +14,12 @@ class PokemonImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     return CachedNetworkImage(
       imageUrl: image,
-      width: MediaQuery.of(context).size.width * 0.35,
-      height: MediaQuery.of(context).size.width * 0.35,
+      width: width * 0.35,
+      height: width * 0.35,
       placeholder: (context, url) => const CenterCircularProgress(),
       errorWidget: (context, url, error) => const Center(
         child: Icon(

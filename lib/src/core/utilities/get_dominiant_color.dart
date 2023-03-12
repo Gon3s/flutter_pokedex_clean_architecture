@@ -2,18 +2,20 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
 
-Future<Color> getDominantColorFromImageUrl(String imageUrl) async {
+Future<Color> getDominantColorFromImageUrl(String imageUrl) {
   final completer = Completer<Color>();
   final image = NetworkImage(imageUrl);
   image.resolve(const ImageConfiguration()).addListener(
     ImageStreamListener(
-      (ImageInfo info, bool _) async {
-        final paletteGenerator = await PaletteGenerator.fromImageProvider(
+      (ImageInfo info, _) {
+        PaletteGenerator.fromImageProvider(
           image,
+        ).then(
+          (value) => completer.complete(value.dominantColor?.color),
         );
-        completer.complete(paletteGenerator.dominantColor?.color);
       },
     ),
   );
+
   return completer.future;
 }

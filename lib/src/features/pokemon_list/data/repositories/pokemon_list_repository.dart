@@ -15,6 +15,7 @@ class PokemonListRepositoryImpl implements PokemonListRepository {
             (_) => null,
             (PokemonListModel data) {
               if (data.pokemonList == null) return null;
+
               return data.pokemonList!.map((e) => e.toEntity()).toList();
             },
           ),
