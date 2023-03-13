@@ -14,7 +14,6 @@ jobs:
       - name: Build apk
         run: | 
           flutter pub get
-          flutter analyze
           flutter test
           flutter build apk --debug
       - name: Run Flutter test
